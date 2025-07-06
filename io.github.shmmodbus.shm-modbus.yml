@@ -85,7 +85,7 @@ modules:
     buildsystem: autotools
     sources:
       - type: git
-        tag: v3.1.10
+        tag: v3.1.11
         url: https://github.com/stephane/libmodbus.git
 
   - name: Modbus_TCP_client_shm
