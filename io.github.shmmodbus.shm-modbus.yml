@@ -136,7 +136,7 @@ modules:
 
     sources:
       - type: git
-        tag: v0.4.1
+        tag: v1.0.0
         url: https://github.com/SHMModbus/modbus_rtu_client_shm.git
         disable-shallow-clone: true
 
