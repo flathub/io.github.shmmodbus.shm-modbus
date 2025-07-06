@@ -1,8 +1,16 @@
 id: io.github.shmmodbus.shm-modbus
 runtime: org.kde.Platform
-runtime-version: '6.7'
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 command: shm-modbus
+base: io.qt.PySide.BaseApp
+base-version: '6.9'
+build-options:
+  env:
+    - BASEAPP_REMOVE_WEBENGINE=1
+    - BASEAPP_DISABLE_NUMPY=1
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
 finish-args:
   - --device=shm
   - --device=dri
@@ -79,53 +87,6 @@ modules:
       - type: git
         tag: v3.1.10
         url: https://github.com/stephane/libmodbus.git
-
-  - name: python3-PySide6
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-            --prefix=${FLATPAK_DEST} "PySide6>=6.6.2" --no-build-isolation
-    sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/84/f0/32ab2317ad1097c12fa9b34621c642babc979197e11a268ba4e02d1e6501/PySide6-6.7.1-cp39-abi3-manylinux_2_28_x86_64.whl
-        sha256: 45a539286e3a8afafd3ebc6b3391d587ce86293564ecba3a994e335dc68fe599
-        only-arches:
-          - x86_64
-      - type: file
-        url: https://files.pythonhosted.org/packages/ac/31/cd538b806b83c9d567e498c4c3d11e35baa9e989aadd5ec7c2caa52b571d/shiboken6-6.7.1-cp39-abi3-manylinux_2_28_x86_64.whl
-        sha256: 6322b7a6232fc93eac0b11489007734438ae1e6213429fd6d7521d04072c2f87
-        only-arches:
-          - x86_64
-      - type: file
-        url: https://files.pythonhosted.org/packages/5f/6e/387c24fe38523e2097af16e4f5a8b51643f900295088e204456784bca101/PySide6_Essentials-6.7.1-cp39-abi3-manylinux_2_28_x86_64.whl
-        sha256: b2d70dc4376c1b1ff5b2988a428a0ed5a889173ce9a0b56803468063d0ef7c75
-        only-arches:
-          - x86_64
-      - type: file
-        url: https://files.pythonhosted.org/packages/c4/81/e5fded14e4400e59ce22f071c9f7289e23c7772bb1cc40bf6bdc7d66b02e/PySide6_Addons-6.7.1-cp39-abi3-manylinux_2_28_x86_64.whl
-        sha256: e9fbfc31e0de5075ee98d92cdbd7ccd274e4ac25100c890ae5bddfc8804a304c
-        only-arches:
-          - x86_64
-      - type: file
-        url: https://files.pythonhosted.org/packages/9d/87/dfc3f6ff2e8aa525dce68356fe96acc95dfade2d1ff8a392e298169d34f1/PySide6-6.7.1-cp39-abi3-manylinux_2_31_aarch64.whl
-        sha256: 98ac591d8b54844f366fe806e92437487f31250b24aaf647bd192f958e4d2afb
-        only-arches:
-          - aarch64
-      - type: file
-        url: https://files.pythonhosted.org/packages/5e/16/bd153fc4084f725b9f07cf5d6fb9604f37cc7669a20ad861e5e2ea228bba/shiboken6-6.7.1-cp39-abi3-manylinux_2_31_aarch64.whl
-        sha256: ec53bfcc4bb762bc845548410e17a09447837a3f20102efb4f91c12688648091
-        only-arches:
-          - aarch64
-      - type: file
-        url: https://files.pythonhosted.org/packages/23/90/4b6e470fa264cfb5024ce4a9548d8f6b1b8150d401ed304db12bc0a1f4f9/PySide6_Essentials-6.7.1-cp39-abi3-manylinux_2_31_aarch64.whl
-        sha256: b1cc7eadccd2a3a6cf4bc789b874bd316714b8c5191ade4a710b952bd0d2cc81
-        only-arches:
-          - aarch64
-      - type: file
-        url: https://files.pythonhosted.org/packages/e0/75/651c6b51ccaa047c2b818762d2c02166e42d8440960b571650bca3efd218/PySide6_Addons-6.7.1-cp39-abi3-manylinux_2_31_aarch64.whl
-        sha256: e7de1210580217cf605c5ac8cb0f21ebcc51b261e6f9c90908eb596991607789
-        only-arches:
-          - aarch64
 
   - name: Modbus_TCP_client_shm
     buildsystem: cmake-ninja
