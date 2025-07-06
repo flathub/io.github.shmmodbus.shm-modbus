@@ -41,7 +41,7 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v2.0.2
+        tag: v2.0.4
         url: https://github.com/NikolasK-source/cxxshm.git
 
   - name: cxxsemaphore
