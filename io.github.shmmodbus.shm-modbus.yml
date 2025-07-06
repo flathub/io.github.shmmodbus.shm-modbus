@@ -27,7 +27,7 @@ modules:
       - -DCXXOPTS_BUILD_TESTS=OFF
     sources:
       - type: git
-        tag: v3.2.0
+        tag: v3.3.1
         url: https://github.com/jarro2783/cxxopts.git
 
   - name: cxxshm
