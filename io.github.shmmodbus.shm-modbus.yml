@@ -97,7 +97,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v1.6.3
@@ -133,7 +132,6 @@ modules:
       - -DCOMPILER_WARNINGS=OFF
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
-
     sources:
       - type: git
         tag: v1.0.0
@@ -149,7 +147,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v1.1.1
@@ -164,7 +161,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v2.0.1
@@ -179,7 +175,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v1.4.1
@@ -194,7 +189,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v1.3.1
@@ -209,7 +203,6 @@ modules:
       - -DCLANG_TIDY=OFF
       - -DENABLE_TEST=OFF
       - -DBUILD_DOC=OFF
-
     sources:
       - type: git
         tag: v1.5.0
@@ -222,10 +215,8 @@ modules:
       - -DCLANG_FORMAT=OFF
       - -DCOMPILER_WARNINGS=OFF
       - -DBUILD_DOC=OFF
-
     post-install:
       - mv ${FLATPAK_DEST}/bin/wago_modbus_coupler_shm ${FLATPAK_DEST}/bin/wago-modbus-coupler-shm
-
     sources:
       - type: git
         tag: v1.1.1
@@ -239,7 +230,6 @@ modules:
       - install -D -m 644 -t "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps" ${FLATPAK_ID}.svg
       - install -D -m 644 ${FLATPAK_ID}_256.png "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
       - install -D -m 644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop
-
     sources:
       - type: git
         tag: v2.1.3
