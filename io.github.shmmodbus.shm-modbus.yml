@@ -14,6 +14,7 @@ cleanup-commands:
 finish-args:
   - --device=shm
   - --device=dri
+  - --device=all
   - --share=network
   - --share=ipc
   - --socket=fallback-x11
@@ -149,9 +150,9 @@ modules:
       - pip3 install --prefix=/app --no-deps .
     sources:
       - type: git
-        tag: v2.1.3
+        tag: v2.2.0
         url: https://github.com/SHMModbus/shm_modbus_gui.git
-        commit: 83e304472f7dd4c2e9948a9008e9271136f4040d
+        commit: 84e05e6910ba1ed918458388c17fe17441b1dae7
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -292,9 +293,9 @@ modules:
       - install -D -m 644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop
     sources:
       - type: git
-        tag: v2.1.4
+        tag: v2.1.6
         url: https://github.com/SHMModbus/SHM_Modbus.git
-        commit: ba8cf152b1d0333d90aeba95ff7b59a882d753e3
+        commit: 1df3bda32c6aca55384a40c40031a01c4d450631
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
