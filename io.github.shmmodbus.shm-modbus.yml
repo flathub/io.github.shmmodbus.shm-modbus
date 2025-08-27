@@ -124,9 +124,9 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.6.3
+        tag: v1.7.0
         url: https://github.com/SHMModbus/modbus_tcp_client_shm.git
-        commit: 2a894e26c7744657eba3c50e971621ec3897653c
+        commit: 03002996fcb5de59832dee326084f6eb799d493a
         disable-shallow-clone: true
         x-checker-data:
           type: git
