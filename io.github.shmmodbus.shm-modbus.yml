@@ -167,9 +167,9 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v1.0.0
+        tag: v1.1.0
         url: https://github.com/SHMModbus/modbus_rtu_client_shm.git
-        commit: 48209d97157e417a6e74ecff29c486f6572d46a5
+        commit: d2f51ba07124e47aa9b5dd887321fdca64730256
         disable-shallow-clone: true
         x-checker-data:
           type: git
@@ -204,9 +204,9 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v2.0.1
+        tag: v2.1.0
         url: https://github.com/SHMModbus/shm_format.git
-        commit: fc79301861ea844c895aaff6e39bcaeab57395b4
+        commit: ab82a8abf99274767eb72ff84f0347eb6052e499
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
