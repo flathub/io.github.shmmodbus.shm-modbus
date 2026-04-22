@@ -1,10 +1,10 @@
 id: io.github.shmmodbus.shm-modbus
 runtime: org.kde.Platform
-runtime-version: '6.9'
+runtime-version: '6.11'
 sdk: org.kde.Sdk
 command: shm-modbus
 base: io.qt.PySide.BaseApp
-base-version: '6.9'
+base-version: '6.11'
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
@@ -105,9 +105,9 @@ modules:
     buildsystem: autotools
     sources:
       - type: git
-        tag: v3.1.11
+        tag: v3.1.12
         url: https://github.com/stephane/libmodbus.git
-        commit: 5190e5e141780ae481f24be16d7b39a5f3ad8f8f
+        commit: 9af6c16074df566551bca0a7c37443e48f216289
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -292,9 +292,9 @@ modules:
       - install -D -m 644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop
     sources:
       - type: git
-        tag: v2.1.4
+        tag: v2.1.7
         url: https://github.com/SHMModbus/SHM_Modbus.git
-        commit: ba8cf152b1d0333d90aeba95ff7b59a882d753e3
+        commit: e8c302a50714b25b794158a0c30129f677b4ae48
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
