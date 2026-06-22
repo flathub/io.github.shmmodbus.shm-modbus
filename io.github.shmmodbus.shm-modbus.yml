@@ -28,8 +28,8 @@ modules:
       - -DCXXOPTS_BUILD_TESTS=OFF
     sources:
       - type: git
-        tag: v3.3.1
         url: https://github.com/jarro2783/cxxopts.git
+        tag: v3.3.1
         commit: 44380e5a44706ab7347f400698c703eb2a196202
         x-checker-data:
           type: git
@@ -141,8 +141,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SHMModbus/shm-modbus-signal-gen.git
-        commit: ae911cceebaedfd4d6acab0a9f66d237ea79e3e8
         tag: v1.0.2
+        commit: ae911cceebaedfd4d6acab0a9f66d237ea79e3e8
 
   - name: gui
     buildsystem: simple
