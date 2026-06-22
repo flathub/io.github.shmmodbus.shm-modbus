@@ -1,10 +1,10 @@
 id: io.github.shmmodbus.shm-modbus
 runtime: org.kde.Platform
-runtime-version: '6.9'
+runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: shm-modbus
 base: io.qt.PySide.BaseApp
-base-version: '6.9'
+base-version: '6.10'
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
@@ -28,8 +28,8 @@ modules:
       - -DCXXOPTS_BUILD_TESTS=OFF
     sources:
       - type: git
-        tag: v3.3.1
         url: https://github.com/jarro2783/cxxopts.git
+        tag: v3.3.1
         commit: 44380e5a44706ab7347f400698c703eb2a196202
         x-checker-data:
           type: git
@@ -46,8 +46,8 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v2.0.4
         url: https://github.com/NikolasK-source/cxxshm.git
+        tag: v2.0.4
         commit: 2bce9d6cc80a9903fecf35048d43d950bc91b8fc
         x-checker-data:
           type: git
@@ -64,8 +64,8 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v2.0.4
         url: https://github.com/NikolasK-source/cxxsemaphore.git
+        tag: v2.0.4
         commit: 013d56fb690df3bcf77f35bddd68f165272b9867
         x-checker-data:
           type: git
@@ -82,9 +82,9 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v2.0.4
         url: https://github.com/NikolasK-source/cxxitimer.git
-        commit: 65fc36980cc62e073f5f7f9f3ac11779492cf107
+        tag: v2.0.5
+        commit: fcae2dc8a63f370424b6c1d13b4761b4ad4d1c38
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -95,8 +95,8 @@ modules:
       - -DJSON_BuildTests=OFF
     sources:
       - type: git
-        tag: v3.12.0
         url: https://github.com/nlohmann/json.git
+        tag: v3.12.0
         commit: 55f93686c01528224f448c19128836e7df245f72
         x-checker-data:
           type: git
@@ -106,9 +106,9 @@ modules:
     buildsystem: autotools
     sources:
       - type: git
-        tag: v3.1.11
         url: https://github.com/stephane/libmodbus.git
-        commit: 5190e5e141780ae481f24be16d7b39a5f3ad8f8f
+        tag: v3.1.12
+        commit: 9af6c16074df566551bca0a7c37443e48f216289
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -124,8 +124,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.7.0
         url: https://github.com/SHMModbus/modbus_tcp_client_shm.git
+        tag: v1.7.0
         commit: 03002996fcb5de59832dee326084f6eb799d493a
         disable-shallow-clone: true
         x-checker-data:
@@ -135,23 +135,23 @@ modules:
   - name: signal_gen
     buildsystem: simple
     build-commands:
-      - pip3 install --prefix=/app --no-deps .
+      - pip3 install --prefix=/app --no-deps . --no-build-isolation
       - mv /app/bin/signalgen /app/bin/signal-gen
       - ln -s /app/bin/signal-gen /app/bin/shm-modbus-signal-gen
     sources:
       - type: git
+        url: https://github.com/SHMModbus/shm-modbus-signal-gen.git
         tag: v1.0.2
         commit: ae911cceebaedfd4d6acab0a9f66d237ea79e3e8
-        url: https://github.com/SHMModbus/shm-modbus-signal-gen.git
 
   - name: gui
     buildsystem: simple
     build-commands:
-      - pip3 install --prefix=/app --no-deps .
+      - pip3 install --prefix=/app --no-deps . --no-build-isolation
     sources:
       - type: git
-        tag: v2.2.0
         url: https://github.com/SHMModbus/shm_modbus_gui.git
+        tag: v2.2.0
         commit: 84e05e6910ba1ed918458388c17fe17441b1dae7
         x-checker-data:
           type: git
@@ -167,8 +167,8 @@ modules:
       - -DENABLE_TEST=OFF
     sources:
       - type: git
-        tag: v1.1.0
         url: https://github.com/SHMModbus/modbus_rtu_client_shm.git
+        tag: v1.1.0
         commit: d2f51ba07124e47aa9b5dd887321fdca64730256
         disable-shallow-clone: true
         x-checker-data:
@@ -186,8 +186,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.1.1
         url: https://github.com/SHMModbus/write_shm.git
+        tag: v1.1.1
         commit: 3b3cee7da4afe464f052388c3b6aec5d0dafd89e
         x-checker-data:
           type: git
@@ -204,8 +204,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v2.1.0
         url: https://github.com/SHMModbus/shm_format.git
+        tag: v2.1.0
         commit: ab82a8abf99274767eb72ff84f0347eb6052e499
         x-checker-data:
           type: git
@@ -222,8 +222,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.4.1
         url: https://github.com/SHMModbus/shared_mem_random.git
+        tag: v1.4.1
         commit: 092d73077e32699437b8295ffcc37d0345fa745c
         x-checker-data:
           type: git
@@ -240,8 +240,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.3.1
         url: https://github.com/SHMModbus/dump_shm.git
+        tag: v1.3.1
         commit: 7dad5bed7c052c02cea05a40b085899410f6f7bf
         x-checker-data:
           type: git
@@ -258,8 +258,8 @@ modules:
       - -DBUILD_DOC=OFF
     sources:
       - type: git
-        tag: v1.5.0
         url: https://github.com/SHMModbus/stdin_to_modbus_shm.git
+        tag: v1.5.0
         commit: 6acf2b259473749b5c38fbb416a43f85c72d265a
         x-checker-data:
           type: git
@@ -276,8 +276,8 @@ modules:
       - mv ${FLATPAK_DEST}/bin/wago_modbus_coupler_shm ${FLATPAK_DEST}/bin/wago-modbus-coupler-shm
     sources:
       - type: git
-        tag: v1.1.1
         url: https://github.com/SHMModbus/wago_modbus_coupler_shm.git
+        tag: v1.1.1
         commit: 6bed8de3342132d191171be9af2208fe388dbde7
         x-checker-data:
           type: git
@@ -293,9 +293,9 @@ modules:
       - install -D -m 644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop
     sources:
       - type: git
-        tag: v2.1.6
         url: https://github.com/SHMModbus/SHM_Modbus.git
-        commit: 1df3bda32c6aca55384a40c40031a01c4d450631
+        tag: v2.1.7
+        commit: e8c302a50714b25b794158a0c30129f677b4ae48
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
