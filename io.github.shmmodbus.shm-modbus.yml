@@ -107,8 +107,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/stephane/libmodbus.git
-        tag: v3.1.12
-        commit: 9af6c16074df566551bca0a7c37443e48f216289
+        tag: v3.2.0
+        commit: a9b025d12289855490b10d77461c99e001abfc0f
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
